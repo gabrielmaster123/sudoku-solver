@@ -13,15 +13,17 @@ package com.gabiscode;
  */
 public class SField {
     int[][] field = {
-        {0,8,0,0,0,7,6,0,0},
-        {0,0,1,6,5,0,0,0,2},
-        {5,0,0,0,0,3,0,0,0},
-        {4,0,0,5,2,0,8,0,0},
-        {0,0,7,0,0,0,0,4,0},
-        {0,0,0,0,3,0,0,0,0},
-        {0,0,0,0,0,6,0,0,0},
-        {0,9,0,0,0,0,0,0,1},
-        {7,0,0,8,4,0,2,0,0}
+        {4,0,7, 6,0,0, 0,1,8},
+        {0,0,0, 0,5,0, 0,0,6},
+        {0,0,3, 0,0,0, 0,0,0},
+
+        {0,8,0, 0,0,0, 0,0,0},
+        {0,0,0, 0,0,2, 9,0,0},
+        {1,0,6, 5,0,0, 0,7,0},
+
+        {0,5,0, 0,0,0, 0,8,0},
+        {0,3,0, 4,0,0, 0,0,0},
+        {8,0,4, 0,9,0, 7,0,0}
     };
 
 
@@ -109,11 +111,25 @@ public class SField {
     }
     
     public void printField(){
+        System.out.println("-----------");
         for (int j = 0; j < field[0].length; j++) {
             for (int i = 0; i < field.length; i++) {
-                System.out.print(field[j][i] + " ");
+                if(i==3||i==6||i==9){
+                    System.out.print("|");
+                }
+                System.out.print(field[j][i]);
+                if(j==2||j==5||j==8){
+                    if(i==8){
+                        System.out.println("");
+                        System.out.println("-----------");
+                    }
+                }
+                
             }
-            System.out.println("");
+            
+            if(j!=2&&j!=5&&j!=8){
+                System.out.println("");
+            }
         }
     }
 }
